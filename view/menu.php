@@ -28,7 +28,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../view/cadastrarEquipamento.php">Cadastrar</a>
-                    <a class="dropdown-item" href="../view/editarEquipamento.php">Editar</a>
                     </li>
 
                     <li class="nav-item">

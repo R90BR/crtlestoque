@@ -36,9 +36,10 @@ Class editarEquipamento{
     }
 
     public function atualizarEquipamento($nome,$situacao,$tipo,$quantidade,$observacao,$id){
-        echo 'foiii2';
+        
 
        $this->editar->atualizarEstoque($nome,$situacao,$tipo,$quantidade,$observacao,$id);
+       header('location: ../view/listarEstoque.php');
        
 
 
