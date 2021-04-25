@@ -1,5 +1,7 @@
 <?php
-
+/*
+Estrutura de configuração com o banco de dados.
+*/
 
 date_default_timezone_set('America/Sao_Paulo');
 

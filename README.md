@@ -39,7 +39,7 @@
 
 ### Detalhes sobre o programa:
 
-> o Programa é estuturado em 5 pastas.
+> Programa é estuturado em 5 pastas.
 
 > Controller - Pasta responsavel por todo o controle e comunicação com as informações. 
 

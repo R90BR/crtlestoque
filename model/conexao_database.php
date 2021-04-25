@@ -15,6 +15,8 @@ class ConexaoDatabase{
         $this->mysqli = new mysqli(BD_SERVIDOR, BD_USUARIO , BD_SENHA, BD_BANCO);
     }
 
+
+    //guarda as variaveis no banco de dados
     public function setEstoque($nome,$situacao,$tipo,$quantidade,$observacao){
         $stmt = $this->mysqli->prepare("INSERT INTO equipamento (`nome`, `situacao`, `tipo`, `quantidade`, `observacao`) VALUES (?,?,?,?,?)");
         $stmt->bind_param("sssss",$nome,$situacao,$tipo,$quantidade,$observacao);
@@ -27,7 +29,8 @@ class ConexaoDatabase{
         }
 
     }
-
+    
+    //le a tabela do banco de dados e retorna um vertor
     public function getEstoque(){
         $array = [];
         $result = $this->mysqli->query("SELECT * FROM equipamento");
@@ -38,7 +41,8 @@ class ConexaoDatabase{
         return $array;
 
     }
-
+    
+    //recebe o id do equipamento a ser deletado 
     public function deletaEquipamento($id){
         if($this->mysqli->query("DELETE FROM `equipamento` WHERE `nome` = '".$id."';")== TRUE){
             return true;
@@ -47,7 +51,8 @@ class ConexaoDatabase{
         }
 
     }
-
+    
+    //atualiza os dados do item escolhido 
     public function atualizarEstoque($nome,$situacao,$tipo,$quantidade,$observacao,$id){
         $stmt = $this->mysqli->prepare("UPDATE `equipamento` SET `nome` = ?, `situacao`=?, `tipo`=?, `quantidade`=?, `observacao`=? WHERE `nome` = ?");
         $stmt->bind_param("ssssss",$nome,$situacao,$tipo,$quantidade,$observacao,$id);
@@ -57,7 +62,8 @@ class ConexaoDatabase{
             return false;
         }
     }
-
+   
+    //retorna o item escolhido 
     public function buscarEstoque($nome){
         $result = $this->mysqli->query("SELECT * FROM equipamento WHERE nome='$nome'");
         return $result->fetch_array(MYSQLI_ASSOC);

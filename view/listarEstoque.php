@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php new listarController();  ?>
+            <?php new listarEstoque();  ?>
 
         </tbody>
     </table>

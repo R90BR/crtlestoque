@@ -1,6 +1,15 @@
 <?php
 require_once("../model/conexao_database.php");
-class listarController{
+
+/*
+
+    listarEstoque () -  classe carrega todos elementos do banco de dados e lista na tabela
+    
+    
+
+
+*/
+class listarEstoque{
 
     private $lista;
 
@@ -9,8 +18,9 @@ class listarController{
         $this->criarTabela();
 
     }
-
+    
     private function criarTabela(){
+        //carrega o array vindo do conexao_database e separa as variaveis para imprimir na tabela
         $row = $this->lista->getEstoque();
         if(!$row== NULL){
         foreach ($row as $value){
