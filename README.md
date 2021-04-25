@@ -3,9 +3,13 @@
 ### Conceitos Utilizados:
 
 >CRUD.
+
 >MVC.
+
 >PHP.
+
 >MYSQL.
+
 >BOOTSTRAP (Framework CSS).
 
 ### Objetivo: 
@@ -14,7 +18,7 @@
 
 ### Detalhes:
 
->O programada deve armazenar as seguintes informações:
+> Programada deve armazenar as seguintes informações:
 
 > PARA O EQUIPAMENTO:
 

@@ -10,7 +10,12 @@
     <body>
      <?php include("menu.php")?>
         
-            
+        
+      <div class="container-fluid">
+          </br>
+         <h3 class="text-center">Seja Bem-Vindo ao Controle de Estoque</h3>    
+      
+      </div>
         
     
 

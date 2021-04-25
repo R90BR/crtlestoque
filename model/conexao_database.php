@@ -1,6 +1,8 @@
 <?php
 
 require_once("../model/config.php");
+
+
 class ConexaoDatabase{
 
     protected $mysqli;

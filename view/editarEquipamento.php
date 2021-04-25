@@ -8,6 +8,8 @@
     <body>
         <?php include("menu.php")?>
         <?php include("../controller/c_editarEquipamento.php")?>
+
+        
         <div class="container-fluid">
         
         <form method="post" action="../controller/c_editarEquipamento.php" id="form" name="form">

@@ -1,6 +1,15 @@
 <?php
 require_once("../model/conexao_database.php");
 
+/*
+
+    editarEquipamento () -  classe para editar os equipamentos ja inseridos no banco de dados
+    
+    
+
+
+*/
+
 Class editarEquipamento{
     
     private $editar;
@@ -20,7 +29,7 @@ Class editarEquipamento{
 
 
     }
-
+    // puxa as informações do banco e recria e separar as variaveis do formulario
     private function criarFormulario($id){
         $row = $this->editar->buscarEstoque($id);
         $this->nome=$row['nome'];
@@ -34,7 +43,7 @@ Class editarEquipamento{
         
 
     }
-
+    // atualiza as variaveis editadas no formulario e guarda no banco de dados
     public function atualizarEquipamento($nome,$situacao,$tipo,$quantidade,$observacao,$id){
         
 
@@ -44,7 +53,9 @@ Class editarEquipamento{
 
 
     }
-
+    /*
+      Funções auxiliares para preencher os campos do formulario editar 
+    */
     public function getNome(){
         return $this->nome;
     }
@@ -76,7 +87,7 @@ $id = filter_input(INPUT_GET, 'id');
 $editar = new editarEquipamento($id);
 
 if(isset($_POST['submit'])){
-    echo 'foiii';
+    
     $editar->atualizarEquipamento($_POST['nome'], $_POST['situacao'],$_POST['tipo'],$_POST['quantidade'], $_POST['observacao'],$_POST['id']);
 }
 
