@@ -17,7 +17,10 @@
                 <th>Nome</th>
                 <th>Situacao</th>
                 <th>Tipo</th>
-                
+                <th>Quantidade</th>
+                <th>Observação</th>
+                <th>Editar</th>
+                <th>Excluir</th>
                 
             </tr>
         </thead>
