@@ -21,7 +21,10 @@ class ConexaoDatabase{
         $stmt = $this->mysqli->prepare("INSERT INTO equipamento (`nome`, `situacao`, `tipo`, `quantidade`, `observacao`) VALUES (?,?,?,?,?)");
         $stmt->bind_param("sssss",$nome,$situacao,$tipo,$quantidade,$observacao);
          if( $stmt->execute() == TRUE){
-            header('location: ../view/index.php');
+            $date = date('Y/m/d');
+            $this->setRegistro($nome,'cadastro',$date);
+            
+            
             exit;
             return true ;
         }else{
@@ -57,6 +60,8 @@ class ConexaoDatabase{
         $stmt = $this->mysqli->prepare("UPDATE `equipamento` SET `nome` = ?, `situacao`=?, `tipo`=?, `quantidade`=?, `observacao`=? WHERE `nome` = ?");
         $stmt->bind_param("ssssss",$nome,$situacao,$tipo,$quantidade,$observacao,$id);
         if($stmt->execute()==TRUE){
+            $date = date('Y/m/d');
+            $this->setRegistro($nome,'atualização',$date);
             return true;
         }else{
             return false;
@@ -69,7 +74,30 @@ class ConexaoDatabase{
         return $result->fetch_array(MYSQLI_ASSOC);
 
     }
+    
+    public function setRegistro($nome,$modo,$data){
+        $stmt = $this->mysqli->prepare("INSERT INTO registros (`nome`, `modo`,`data` ) VALUES (?,?,?)");
+        $stmt->bind_param("sss",$nome,$modo,$data);
+         if( $stmt->execute() == TRUE){
+            header('location: ../view/index.php');
+            exit;
+            return true ;
+        }else{
+            return false;
+        }
 
+    }
+
+    public function getRegistro(){
+        $array = [];
+        $result = $this->mysqli->query("SELECT * FROM registros");
+        
+        while($row = $result->fetch_array(MYSQLI_ASSOC)){
+            $array[] = $row;
+        }
+        return $array;
+
+    }
     
 }
 ?>
