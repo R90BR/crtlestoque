@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Abr-2021 às 04:07
+-- Tempo de geração: 26-Abr-2021 às 05:10
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -36,6 +36,19 @@ CREATE TABLE `equipamento` (
   `observacao` varchar(450) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `registros`
+--
+
+CREATE TABLE `registros` (
+  `id` int(150) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `modo` varchar(15) NOT NULL,
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -47,6 +60,12 @@ ALTER TABLE `equipamento`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `registros`
+--
+ALTER TABLE `registros`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -54,7 +73,13 @@ ALTER TABLE `equipamento`
 -- AUTO_INCREMENT de tabela `equipamento`
 --
 ALTER TABLE `equipamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de tabela `registros`
+--
+ALTER TABLE `registros`
+  MODIFY `id` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
