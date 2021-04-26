@@ -28,8 +28,8 @@ class cadastroController {
         //chama a função da do ConexaoDatabase.
         //setEstoque - função armazena as variaveis dentro do banco de dados.
         $this->cadastro -> setEstoque($nome, $situacao, $tipo, $quantidade, $observacao); 
-        header('location: ../view/cadastrarEquipamento.php');
-        //$this->cadastro -> setRegistro($nome,$modo,$data);
+        //header('location: ../view/cadastrarEquipamento.php');
+        
         
     }
 
